@@ -44,10 +44,10 @@ app.post('/register', async (req, res) => {
   
     try {
       await newUser.save();
-      res.send('Registration successful!');
+      res.send.json({message:'Registration successful!'});
     } catch (err) {
       console.error(err);
-      res.send('Registration failed!');
+      res.send.json({message:'Registration failed!'});
     }
   });
   
@@ -63,13 +63,13 @@ app.post('/login', async (req, res) => {
     try {
       const user = await User.findOne({ username, password }).exec();
       if (!user) {
-        res.send('User not found!');
+        res.send.json({message:'User not found!'});
       } else {
-        res.send('Login successful!');
+        res.send.json({message:'Login successful!'});
       }
     } catch (err) {
       console.error(err);
-      res.send('Login failed!');
+      res.send.json({message:'Login failed!'});
     }
   });
   
