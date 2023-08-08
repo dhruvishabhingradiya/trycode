@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cors=reequire("cors")
+const cors=require("cors")
 const port = process.env.PORT || 6000
 
 app.use(bodyParser.urlencoded());
