@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cors=require("cors")
+const cors=reequire("cors")
 const port = process.env.PORT || 6000
 
 app.use(bodyParser.urlencoded());
@@ -44,10 +44,10 @@ app.post('/register', async (req, res) => {
   
     try {
       await newUser.save();
-      res.send.json({message:'Registration successful!'});
+      res.send('Registration successful!');
     } catch (err) {
       console.error(err);
-      res.send.json({message:'Registration failed!'});
+      res.send('Registration failed!');
     }
   });
   
@@ -63,13 +63,13 @@ app.post('/login', async (req, res) => {
     try {
       const user = await User.findOne({ username, password }).exec();
       if (!user) {
-        res.send.json({message:'User not found!'});
+        res.send('User not found!');
       } else {
-        res.send.json({message:'Login successful!'});
+        res.send('Login successful!');
       }
     } catch (err) {
       console.error(err);
-      res.send.json({message:'Login failed!'});
+      res.send('Login failed!');
     }
   });
   
