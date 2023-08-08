@@ -41,7 +41,6 @@ app.get('/register', (req, res) => {
 app.post('/register', async (req, res) => {
     const { username, password } = req.body;
     const newUser = new User({ username, password });
-  
     try {
       await newUser.save();
     res.status(201).json({ status: '201', message: 'Registration successful' });
@@ -51,29 +50,25 @@ app.post('/register', async (req, res) => {
     }
   });
   
-  
-
 app.get('/login', (req, res) => {
   res.render('login');
 });
 
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
-  
     try {
       const user = await User.findOne({ username, password }).exec();
       if (!user) {
-        res.send('User not found!');
-      } else {
-        res.send('Login successful!');
-      }
+    res.status(400).json({ status: '500', message: 'User not found!!' });
+            } else {
+    res.status(201).json({ status: '201', message: 'Login successful' });
+          }
     } catch (err) {
       console.error(err);
-      res.send('Login failed!');
+    res.status(500).json({ status: '201', message: 'Login failed' });
     }
   });
   
-
   app.listen(port, function (error) {
       if (error) throw error
       console.log("Server created Successfully")
