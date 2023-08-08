@@ -8,6 +8,14 @@
     ],
     "routes": [
       {
+        "src": "/register",
+        "dest": "/app.js"
+      },
+      {
+        "src": "/login",
+        "dest": "/app.js"
+      },
+      {
         "src": "/(.*)",
         "dest": "/app.js"
       }

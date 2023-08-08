@@ -31,9 +31,9 @@
   app.get('/', (req, res) => {
       res.render('home');
     });
-    // app.get('/logout', (req, res) => {
-    //   res.redirect('login');
-    // });  
+    app.get('/logout', (req, res) => {
+      res.redirect('login');
+    });  
   app.get('/register', (req, res) => {
     res.render('register');
   });
@@ -50,24 +50,24 @@
       }
     });
     
-  // app.get('/login', (req, res) => {
-  //   res.render('login');
-  // });
+  app.get('/login', (req, res) => {
+    res.render('login');
+  });
 
-  // app.post('/login', async (req, res) => {
-  //     const { username, password } = req.body;
-  //     try {
-  //       const user = await User.findOne({ username, password }).exec();
-  //       if (!user) {
-  //     res.status(400).json({ status: '500', message: 'User not found!!' });
-  //             } else {
-  //     res.status(201).json({ status: '201', message: 'Login successful' });
-  //           }
-  //     } catch (err) {
-  //       console.error(err);
-  //     res.status(500).json({ status: '201', message: 'Login failed' });
-  //     }
-  //   });
+  app.post('/login', async (req, res) => {
+      const { username, password } = req.body;
+      try {
+        const user = await User.findOne({ username, password }).exec();
+        if (!user) {
+      res.status(400).json({ status: '500', message: 'User not found!!' });
+              } else {
+      res.status(201).json({ status: '201', message: 'Login successful' });
+            }
+      } catch (err) {
+        console.error(err);
+      res.status(500).json({ status: '201', message: 'Login failed' });
+      }
+    });
     
     app.listen(port, function (error) {
         if (error) throw error
