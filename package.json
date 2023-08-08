@@ -20,5 +20,8 @@
     "pug": "^3.0.2"
   },
   "keywords": [],
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "vercel": "^31.2.2"
+  }
 }
