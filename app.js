@@ -39,6 +39,7 @@
   });
 
   app.post('/register', async (req, res) => {
+  console.log("========================")
       const { username, password } = req.body;
       const newUser = new User({ username, password });
       try {
