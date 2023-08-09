@@ -11,7 +11,7 @@
   app.use(cors());
   app.use(express.urlencoded());
 
-  const dbURI = 'mongodb+srv://dhruvishabhingradiya:4hIvZuqpZjh7ZrpL@users.lrfpqqz.mongodb.net/?retryWrites=true&w=majority, ';
+  const dbURI = 'mongodb+srv://dhruvishabhingradiya:4hIvZuqpZjh7ZrpL@users.lrfpqqz.mongodb.net/?retryWrites=true&w=majority';
   
   mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
   
