@@ -39,11 +39,11 @@
   });
 
   app.post('/register', async (req, res) => {
-    console.log("========================");
     const { username, password } = req.body;
-      const newUser = new User({ username, password });
-      try {
-        await newUser.save();
+    const newUser = new User({ username, password });
+    try {
+      console.log("========================");
+      await newUser.save();
       res.status(201).json({ status: '201', message: 'Registration successful' });
       } catch (err) {
         console.error(err);
