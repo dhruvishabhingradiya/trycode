@@ -9,7 +9,6 @@
     "routes": [
       {
         "src": "/register",
-        "methods":["POST","GET"],
         "dest": "/app.js"
       },
       {
