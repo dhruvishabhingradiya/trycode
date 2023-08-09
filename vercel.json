@@ -4,11 +4,6 @@
       {
         "src": "app.js",
         "use": "@vercel/node"
-      },
-      {
-        "functions": {
-          "timeout": 30
-        }
       }
     ],
     "routes": [
